@@ -1,0 +1,14 @@
+C:\Users\Lenovo\.vscode\projects\ClientLab\bin\Debug\net8.0\ClientLab.exe
+C:\Users\Lenovo\.vscode\projects\ClientLab\bin\Debug\net8.0\ClientLab.deps.json
+C:\Users\Lenovo\.vscode\projects\ClientLab\bin\Debug\net8.0\ClientLab.runtimeconfig.json
+C:\Users\Lenovo\.vscode\projects\ClientLab\bin\Debug\net8.0\ClientLab.dll
+C:\Users\Lenovo\.vscode\projects\ClientLab\bin\Debug\net8.0\ClientLab.pdb
+C:\Users\Lenovo\.vscode\projects\ClientLab\obj\Debug\net8.0\ClientLab.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\.vscode\projects\ClientLab\obj\Debug\net8.0\ClientLab.AssemblyInfoInputs.cache
+C:\Users\Lenovo\.vscode\projects\ClientLab\obj\Debug\net8.0\ClientLab.AssemblyInfo.cs
+C:\Users\Lenovo\.vscode\projects\ClientLab\obj\Debug\net8.0\ClientLab.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\.vscode\projects\ClientLab\obj\Debug\net8.0\ClientLab.dll
+C:\Users\Lenovo\.vscode\projects\ClientLab\obj\Debug\net8.0\refint\ClientLab.dll
+C:\Users\Lenovo\.vscode\projects\ClientLab\obj\Debug\net8.0\ClientLab.pdb
+C:\Users\Lenovo\.vscode\projects\ClientLab\obj\Debug\net8.0\ClientLab.genruntimeconfig.cache
+C:\Users\Lenovo\.vscode\projects\ClientLab\obj\Debug\net8.0\ref\ClientLab.dll
