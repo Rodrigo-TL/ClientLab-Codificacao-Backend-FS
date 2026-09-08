@@ -6,62 +6,60 @@ namespace ClientLab
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("--- Testando Sistema ClientLab --- \n");
+            Console.WriteLine("--- Testando Sistema ClientLab (Parte 2) --- \n");
 
-            // 1. Testando Pessoa Física Válida (Maior de 18 anos)
+            // 1. Teste de Pessoa Física com Endereço e Imposto (3%)
             try
             {
-                PessoaFisica pfValida = new PessoaFisica();
-                pfValida.Nome = "João Silva";
-                pfValida.CPF = "123.456.789-00";
-                pfValida.DataNascimento = new DateTime(2000, 05, 20); // Nasceu em 2000, tem mais de 18 anos
-                Console.WriteLine($"✅ PF Cadastrada com sucesso: {pfValida.Nome}");
+                PessoaFisica pf = new PessoaFisica();
+                pf.Nome = "Aline Souzza";
+                pf.CPF = "123.456.789-11";
+                pf.DataNascimento = new DateTime(1998, 10, 15);
+                
+                // Preenchendo Endereço (Etapa 3)
+                pf.Logradouro = "Rua das Flores";
+                pf.Numero = "123";
+                pf.Cidade = "Brasília";
+                pf.TipoEndereco = "Residencial";
+
+                double rendimentoPF = 3000.00;
+                double impostoPF = pf.PagarImposto(rendimentoPF);
+
+                Console.WriteLine($"✅ PF Cadastrada: {pf.Nome}");
+                Console.WriteLine($"   Endereço: {pf.Logradouro}, Nº {pf.Numero} - {pf.Cidade} ({pf.TipoEndereco})");
+                Console.WriteLine($"   Rendimento: R$ {rendimentoPF:F2} | Imposto (3%): R$ {impostoPF:F2}\n");
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine($"❌ Erro PF: {ex.Message}\n");
             }
 
-            // 2. Testando Pessoa Física Inválida (Menor de 18 anos)
+            Console.WriteLine("--------------------------------------------------\n");
+
+            // 2. Teste de Pessoa Jurídica com Endereço e Imposto (5%)
             try
             {
-                PessoaFisica pfInvalida = new PessoaFisica();
-                pfInvalida.Nome = "Lucas Menor";
-                pfInvalida.DataNascimento = DateTime.Today.AddYears(-15); // Forçando 15 anos de idade
-                Console.WriteLine($"✅ PF Cadastrada com sucesso: {pfInvalida.Nome}");
+                PessoaJuridica pj = new PessoaJuridica();
+                pj.Nome = "ClientLab Tech";
+                pj.RazaoSocial = "ClientLab Soluções LTDA";
+                pj.CNPJ = "99.888.777/0001-55";
+
+                // Preenchendo Endereço (Etapa 4)
+                pj.Logradouro = "Setor de Indústrias Gráficas";
+                pj.Numero = "S/N";
+                pj.Cidade = "Brasília";
+                pj.TipoEndereco = "Comercial";
+
+                double rendimentoPJ = 50000.00;
+                double impostoPJ = pj.PagarImposto(rendimentoPJ);
+
+                Console.WriteLine($"✅ PJ Cadastrada: {pj.RazaoSocial}");
+                Console.WriteLine($"   Endereço: {pj.Logradouro}, Nº {pj.Numero} - {pj.Cidade} ({pj.TipoEndereco})");
+                Console.WriteLine($"   Rendimento: R$ {rendimentoPJ:F2} | Imposto (5%): R$ {impostoPJ:F2}\n");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"❌ {ex.Message}");
-            }
-
-            Console.WriteLine("\n-----------------------------------\n");
-
-            // 3. Testando Pessoa Jurídica Válida (Com miolo 0001)
-            try
-            {
-                PessoaJuridica pjValida = new PessoaJuridica();
-                pjValida.Nome = "Mercado Tech";
-                pjValida.RazaoSocial = "Mercado Tech LTDA";
-                pjValida.CNPJ = "12.345.678/0001-95"; // Contém o padrão '0001'
-                Console.WriteLine($"✅ PJ Cadastrada com sucesso: {pjValida.RazaoSocial}");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-            // 4. Testando Pessoa Jurídica Inválida (Sem o miolo 0001)
-            try
-            {
-                PessoaJuridica pjInvalida = new PessoaJuridica();
-                pjInvalida.RazaoSocial = "Empresa Errada";
-                pjInvalida.CNPJ = "12.345.678/0002-95"; // Errado, colocou '0002'
-                Console.WriteLine($"✅ PJ Cadastrada com sucesso: {pjInvalida.RazaoSocial}");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"❌ {ex.Message}");
+                Console.WriteLine($"❌ Erro PJ: {ex.Message}\n");
             }
         }
     }

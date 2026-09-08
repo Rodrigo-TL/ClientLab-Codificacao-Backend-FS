@@ -24,12 +24,14 @@ namespace ClientLab
         {
             DateTime hoje = DateTime.Today;
             int idade = hoje.Year - dataNasc.Year;
-            
-            // Ajusta a idade se o aniversário ainda não aconteceu este ano
-            if (dataNasc.Date > hoje.AddYears(-idade)) 
-                idade--;
-                
+            if (dataNasc.Date > hoje.AddYears(-idade)) idade--;
             return idade;
+        }
+
+        // Etapa 1: Regra de imposto de 3% para Pessoa Física
+        public override double PagarImposto(double rendimento)
+        {
+            return rendimento * 0.03;
         }
     }
 }

@@ -12,3 +12,4 @@ C:\Users\Lenovo\.vscode\projects\ClientLab\obj\Debug\net8.0\refint\ClientLab.dll
 C:\Users\Lenovo\.vscode\projects\ClientLab\obj\Debug\net8.0\ClientLab.pdb
 C:\Users\Lenovo\.vscode\projects\ClientLab\obj\Debug\net8.0\ClientLab.genruntimeconfig.cache
 C:\Users\Lenovo\.vscode\projects\ClientLab\obj\Debug\net8.0\ref\ClientLab.dll
+C:\Users\Lenovo\.vscode\projects\ClientLab\obj\Debug\net8.0\ClientLab.sourcelink.json
