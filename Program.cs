@@ -8,7 +8,6 @@ namespace ClientLab
         {
             Console.WriteLine("--- Testando Sistema ClientLab (Parte 3 - Arquivos) --- \n");
 
-            // 1. Criando e salvando Pessoa Física
             try
             {
                 PessoaFisica pf = new PessoaFisica
@@ -23,7 +22,6 @@ namespace ClientLab
                 };
 
                 Console.WriteLine($"Cadastrando {pf.Nome}...");
-                // Chamando a classe que criamos para salvar em TXT
                 GerenciadorArquivo.SalvarClienteEmTxt(pf);
                 Console.WriteLine();
             }
@@ -34,7 +32,6 @@ namespace ClientLab
 
             Console.WriteLine("--------------------------------------------------\n");
 
-            // 2. Criando e salvando Pessoa Jurídica
             try
             {
                 PessoaJuridica pj = new PessoaJuridica
@@ -49,7 +46,6 @@ namespace ClientLab
                 };
 
                 Console.WriteLine($"Cadastrando {pj.Nome}...");
-                // Chamando a classe que criamos para salvar em TXT
                 GerenciadorArquivo.SalvarClienteEmTxt(pj);
                 Console.WriteLine();
             }
