@@ -6,28 +6,26 @@ namespace ClientLab
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("--- Testando Sistema ClientLab (Parte 2) --- \n");
+            Console.WriteLine("--- Testando Sistema ClientLab (Parte 3 - Arquivos) --- \n");
 
-            // 1. Teste de Pessoa Física com Endereço e Imposto (3%)
+            // 1. Criando e salvando Pessoa Física
             try
             {
-                PessoaFisica pf = new PessoaFisica();
-                pf.Nome = "Aline Souzza";
-                pf.CPF = "123.456.789-11";
-                pf.DataNascimento = new DateTime(1998, 10, 15);
-                
-                // Preenchendo Endereço (Etapa 3)
-                pf.Logradouro = "Rua das Flores";
-                pf.Numero = "123";
-                pf.Cidade = "Brasília";
-                pf.TipoEndereco = "Residencial";
+                PessoaFisica pf = new PessoaFisica
+                {
+                    Nome = "Aline Souzza",
+                    CPF = "123.456.789-11",
+                    DataNascimento = new DateTime(1998, 10, 15),
+                    Logradouro = "Rua das Flores",
+                    Numero = "123",
+                    Cidade = "Brasília",
+                    TipoEndereco = "Residencial"
+                };
 
-                double rendimentoPF = 3000.00;
-                double impostoPF = pf.PagarImposto(rendimentoPF);
-
-                Console.WriteLine($"✅ PF Cadastrada: {pf.Nome}");
-                Console.WriteLine($"   Endereço: {pf.Logradouro}, Nº {pf.Numero} - {pf.Cidade} ({pf.TipoEndereco})");
-                Console.WriteLine($"   Rendimento: R$ {rendimentoPF:F2} | Imposto (3%): R$ {impostoPF:F2}\n");
+                Console.WriteLine($"Cadastrando {pf.Nome}...");
+                // Chamando a classe que criamos para salvar em TXT
+                GerenciadorArquivo.SalvarClienteEmTxt(pf);
+                Console.WriteLine();
             }
             catch (Exception ex)
             {
@@ -36,26 +34,24 @@ namespace ClientLab
 
             Console.WriteLine("--------------------------------------------------\n");
 
-            // 2. Teste de Pessoa Jurídica com Endereço e Imposto (5%)
+            // 2. Criando e salvando Pessoa Jurídica
             try
             {
-                PessoaJuridica pj = new PessoaJuridica();
-                pj.Nome = "ClientLab Tech";
-                pj.RazaoSocial = "ClientLab Soluções LTDA";
-                pj.CNPJ = "99.888.777/0001-55";
+                PessoaJuridica pj = new PessoaJuridica
+                {
+                    Nome = "ClientLab Tech",
+                    RazaoSocial = "ClientLab Solucoes LTDA",
+                    CNPJ = "99.888.777/0001-55",
+                    Logradouro = "Setor de Industrias Graficas",
+                    Numero = "S/N",
+                    Cidade = "Brasília",
+                    TipoEndereco = "Comercial"
+                };
 
-                // Preenchendo Endereço (Etapa 4)
-                pj.Logradouro = "Setor de Indústrias Gráficas";
-                pj.Numero = "S/N";
-                pj.Cidade = "Brasília";
-                pj.TipoEndereco = "Comercial";
-
-                double rendimentoPJ = 50000.00;
-                double impostoPJ = pj.PagarImposto(rendimentoPJ);
-
-                Console.WriteLine($"✅ PJ Cadastrada: {pj.RazaoSocial}");
-                Console.WriteLine($"   Endereço: {pj.Logradouro}, Nº {pj.Numero} - {pj.Cidade} ({pj.TipoEndereco})");
-                Console.WriteLine($"   Rendimento: R$ {rendimentoPJ:F2} | Imposto (5%): R$ {impostoPJ:F2}\n");
+                Console.WriteLine($"Cadastrando {pj.Nome}...");
+                // Chamando a classe que criamos para salvar em TXT
+                GerenciadorArquivo.SalvarClienteEmTxt(pj);
+                Console.WriteLine();
             }
             catch (Exception ex)
             {
